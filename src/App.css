@@ -1,0 +1,122 @@
+/* 
+ */
+
+ .table {
+  display: table;
+  text-align: center;
+  margin: 2% auto 0;
+  border-collapse: separate;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.table_row {
+  display: table-row;
+}
+
+.theader {
+ 
+  display: table-row;
+}
+
+.table_header {
+  display: table-cell;
+  border-bottom: #ccc 1px solid;
+  border-top: #ccc 1px solid;
+  background: #36A9AE;
+  color: #e5e5e5;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 700;
+  padding-left: 5px;
+}
+
+.table_header:first-child {
+  border-left: #ccc 1px solid;
+  border-top-left-radius: 5px;
+}
+
+.table_header:last-child {
+  border-right: #ccc 1px solid;
+  border-top-right-radius: 5px;
+}
+
+
+/* Pagination */
+
+
+/* CSS */
+
+.search-container{
+  
+  width: 30%;
+  float: right;
+  z-index: 10;
+  margin-top: -74px;
+  
+  justify-content: space-between;
+}
+
+@media (max-width: 1200px){
+  .search-container{ width: 400px;}
+ 
+}
+
+input{
+  height: 4vh;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: none;
+}
+
+input:hover{
+  background-color: #9fa19fc4;
+  border: none;
+}
+
+.button-25 {
+  background-color: #36A9AE;
+  background-image: linear-gradient(#37ADB2, #329CA0);
+  border: 1px solid #2A8387;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 1px;
+  color: #FFFFFF;
+  cursor: pointer;
+  /* display: block; */
+  font-family: -apple-system,".SFNSDisplay-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  /* line-height: 100%; */
+  margin-right: 20px;
+  outline: 0;
+  padding: 11px 15px 12px;
+  text-align: center;
+  transition: box-shadow .05s ease-in-out,opacity .05s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+ width: 20%;
+}
+
+.button-25:hover {
+  box-shadow: rgba(255, 255, 255, 0.3) 0 0 2px inset, rgba(0, 0, 0, 0.4) 0 1px 2px;
+  text-decoration: none;
+  transition-duration: .15s, .15s;
+}
+
+.button-25:active {
+  box-shadow: rgba(0, 0, 0, 0.15) 0 2px 4px inset, rgba(0, 0, 0, 0.4) 0 1px 1px;
+}
+
+.button-25:disabled {
+  cursor: not-allowed;
+  opacity: .6;
+}
+
+.button-25:disabled:active {
+  pointer-events: none;
+}
+
+.button-25:disabled:hover {
+  box-shadow: none;
+}
+

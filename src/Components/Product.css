@@ -1,0 +1,118 @@
+
+  @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+*
+{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body
+{
+    font-family: 'Roboto', sans-serif;
+}
+.product-container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+    padding: 50px;
+    
+}
+.product-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 300px;
+  padding: 9px;
+    position: relative;
+    box-shadow: 0 2px 7px #dfdfdf;
+    margin: 50px auto;
+    background: #fafafa;
+}
+
+
+.thumbnail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    padding: 20px;
+    background: #f0f0f0;
+}
+
+.thumbnail img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.thumbnail img:hover{
+ 
+  
+    -webkit-transform: scale(1.3);
+    transform: scale(1.1);
+  
+}
+.product-details {
+    padding: 30px;
+}
+.product-title{
+  display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: black;
+    margin-bottom: 18px;
+}
+ .product-description, .product-price, .product-discount, .product-stock, .product-brand, .product-category {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ccc;
+    margin-bottom: 18px;
+}
+
+
+
+
+
+
+
+.product-price {
+    font-size: 18px;
+    color: #fbb72c;
+    font-weight: 600;
+}
+.product-images{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.product-images img{
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+   width: 30%;
+   height: auto;
+   object-fit: cover;
+}
+
+.product-images img:hover {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+.button-25.btn{
+ float: right;
+ margin-top: -58px;
+}

@@ -1,0 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Freehand&family=Lilita+One&family=Merriweather:ital@1&family=Nunito:wght@300&display=swap');
+
+
+.box{
+    display: block;
+    color: black;
+    font-size: small;
+   
+    z-index: 100;
+    
+    
+}

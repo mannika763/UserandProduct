@@ -1,0 +1,21 @@
+.table {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.user-data {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.user-data p {
+  margin: 0;
+}
+
+.header {
+  font-weight: bold;
+}

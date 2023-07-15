@@ -9,7 +9,7 @@ function NavBar() {
         <div className="nav-container">
           <div className="user-box">
             {" "}
-            <Link className="links" to="/UserData">
+            <Link className="links" to="/">
               User
             </Link>
           </div>

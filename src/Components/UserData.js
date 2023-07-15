@@ -1,13 +1,71 @@
+
 import React from 'react';
 import './UserData.css';
 
 
-const UserData = ({ user }) => {
+const UserData = ({records}) => {
+ 
 
+  
    
   return (
     <>
-    
+    <div className="table" id="results">
+      <div className="theader">
+                    <div
+                      className="table_header"
+                     
+                    >
+                      ID
+                    </div>
+                    <div
+                      className="table_header"
+                  
+                    >
+                      FirstName
+                    </div>
+                    <div
+                      className="table_header"
+                    
+                    >
+                      LastName
+                    </div>
+                    <div className="table_header">MaidenName</div>
+                    <div
+                      className="table_header"
+                   
+                    >
+                      Age
+                    </div>{" "}
+                    <div className="table_header">Gender</div>
+                    <div className="table_header">Email</div>
+                    <div className="table_header">Phone</div>{" "}
+                    <div
+                      className="table_header"
+                     
+                    >
+                      UserName
+                    </div>
+                    <div className="table_header">Password</div>
+                    <div className="table_header">BirthDate</div>
+                    <div className="table_header">Image</div>
+                    <div className="table_header">BloodGroup</div>
+                    <div className="table_header">Height</div>
+                    <div className="table_header">Weight</div>
+                    <div className="table_header">EyeColor</div>
+                    <div className="table_header">Hair</div>
+                    <div className="table_header">Domain</div>
+                    <div className="table_header">IP</div>
+                    <div className="table_header">Address</div>
+                    <div className="table_header">MacAddress</div>
+                    <div className="table_header">University</div>
+                    <div className="table_header">Bank</div>
+                    <div className="table_header">Ein</div>
+                    <div className="table_header">Sin</div>
+                    <div className="table_header">UserAgent</div>
+                  </div>
+                  </div>
+                  {records.map((user) => (
     <div key={user.id} className="table_row">
     <div className="table_small">
       <div className="table_cell" >ID</div>
@@ -152,9 +210,11 @@ const UserData = ({ user }) => {
       <div className="table_cell">userAgent</div>
       <div className="table_cell">{user.userAgent}</div>
     </div>
-    
+           
+
 
   </div>
+   ))}
   </>
   );
 };

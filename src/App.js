@@ -1,19 +1,18 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
-import Product from "./Components/Product";
 import NavBar from "./NavBar";
+import Product from "./Components/Product";
 import Pagination from "./Components/Pagination";
 import UserData from "./Components/UserData";
 import Box from "./Components/Box";
+import Search from "./Components/Search";
 
 const App = () => {
   const [usersData, setUsersData] = useState([]);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedSortOption, setSelectedSortOption] = useState("");
- 
 
   // Sorting
 
@@ -40,9 +39,7 @@ const App = () => {
     handleSortByField(option);
   };
 
-  
-
-// Users Data
+  // Users Data
   const fetchData = async () => {
     try {
       setSearch("");
@@ -59,9 +56,6 @@ const App = () => {
     fetchData();
   }, []);
 
-   // Product Sorting
-  
-
   // Pagination
 
   const recordsPerPage = 5;
@@ -70,11 +64,6 @@ const App = () => {
   const records = usersData.slice(firstIndex, lastIndex);
   const npage = Math.ceil(usersData.length / recordsPerPage);
   const numbers = [...Array(npage + 1).keys()].slice(1);
-
-  function setting(e) {
-    setSearch(e.target.value);
-    console.log(search);
-  }
 
   const prePage = () => {
     if (currentPage > 1) {
@@ -91,12 +80,6 @@ const App = () => {
       setCurrentPage((prevPage) => prevPage + 1);
     }
   };
-
-  //Mapping User Data
-
-  const userData = records.map((user) => (
-    <UserData key={user.id} user={user} />
-  ));
 
   // Searching Function
 
@@ -117,79 +100,21 @@ const App = () => {
     <Router>
       <>
         <NavBar />
-       
+
         <Routes>
           <Route
-            path="/UserData" //This one is giving error
+            path="/"
             element={
               <>
-               <Box handleSortByOption={handleSortByOption} />
-                <div className="search-container">
-                  <input onChange={setting} value={search} />
-                  <button className="button-25" onClick={handleSearch}>
-                    Search
-                  </button>
-                  <button className="button-25" onClick={fetchData}>
-                    Reset
-                  </button>{" "}
-                </div>
+                <Box handleSortByOption={handleSortByOption} />
+                <Search
+                  search={search}
+                  setSearch={setSearch}
+                  handleSearch={handleSearch}
+                  fetchData={fetchData}
+                />
 
-                <div className="table" id="results">
-                  <div className="theader">
-                    <div
-                      className="table_header"
-                     
-                    >
-                      ID
-                    </div>
-                    <div
-                      className="table_header"
-                  
-                    >
-                      FirstName
-                    </div>
-                    <div
-                      className="table_header"
-                    
-                    >
-                      LastName
-                    </div>
-                    <div className="table_header">MaidenName</div>
-                    <div
-                      className="table_header"
-                   
-                    >
-                      Age
-                    </div>{" "}
-                    <div className="table_header">Gender</div>
-                    <div className="table_header">Email</div>
-                    <div className="table_header">Phone</div>{" "}
-                    <div
-                      className="table_header"
-                     
-                    >
-                      UserName
-                    </div>
-                    <div className="table_header">Password</div>
-                    <div className="table_header">BirthDate</div>
-                    <div className="table_header">Image</div>
-                    <div className="table_header">BloodGroup</div>
-                    <div className="table_header">Height</div>
-                    <div className="table_header">Weight</div>
-                    <div className="table_header">EyeColor</div>
-                    <div className="table_header">Hair</div>
-                    <div className="table_header">Domain</div>
-                    <div className="table_header">IP</div>
-                    <div className="table_header">Address</div>
-                    <div className="table_header">MacAddress</div>
-                    <div className="table_header">University</div>
-                    <div className="table_header">Bank</div>
-                    <div className="table_header">Ein</div>
-                    <div className="table_header">Sin</div>
-                    <div className="table_header">UserAgent</div>
-                  </div>
-                  {usersData.length > 0 && userData}
-                </div>
+                <UserData records={records} />
 
                 <div>
                   <Pagination
@@ -203,10 +128,9 @@ const App = () => {
               </>
             }
           />
-         
+
           <Route path="/Product" element={<Product />} />
         </Routes>
-        
       </>
     </Router>
   );

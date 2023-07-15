@@ -10,7 +10,7 @@ function NavBar() {
           <div className="user-box">
             {" "}
             <Link className="links" to="/">
-              User
+              Users
             </Link>
           </div>
           <div className="product-box">

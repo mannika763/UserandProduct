@@ -41,5 +41,9 @@ ul.pagination {
   font-weight: bold;
 }
 
-
+@media (max-width: 600px){
+  ul.pagination {
+    margin: auto;
+  }
+}
   
